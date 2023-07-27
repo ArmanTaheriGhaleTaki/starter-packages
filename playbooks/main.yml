@@ -1,0 +1,16 @@
+---
+- name: Installing necesseri packages 
+  hosts: pc 
+  become: yes
+  tasks:
+    - name: Update repositories cache and install  packages
+      ansible.builtin.apt:
+        name: "{{ item }}"
+        update_cache: yes
+      loop:
+        - vim 
+        - tmux
+        - git 
+        - net-tools
+        - curl 
+
