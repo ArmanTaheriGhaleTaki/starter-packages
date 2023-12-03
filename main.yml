@@ -1,9 +1,9 @@
 ---
 - name: Installing necesseri packages 
-  hosts: test 
+  hosts: all
   become: yes
   tasks:
-    - name: Update repositories cache and install  packages
+    - name: Update repositories cache and install packages
       ansible.builtin.apt:
         name: "{{ item }}"
         update_cache: yes
